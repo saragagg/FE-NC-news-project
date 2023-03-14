@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Gloock&display=swap');
+
+.header {
+margin: 0;
+padding: 0;
+background-color: #f1deeb;
+padding-top: 2vw;
+padding-bottom: 2vw;
+}
+
+
+h1 {
+    display: inline;
+    align-content: center;
+    font-size: 9vw;
+    font-family: 'Climate Crisis', cursive;
+    color: #A1708D;
+    margin-right: 0;
+    margin-left: 0;
+    /* border-color: aqua;
+    border-style: solid; */
+}
