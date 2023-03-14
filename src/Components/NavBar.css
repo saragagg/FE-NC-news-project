@@ -1,0 +1,14 @@
+.navBar-container {
+    background-color: #f4ecf2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#navBar-button {
+    padding:5px;
+    border-radius: 15px;
+    border-color: #A1708D;
+    font-size: 80%;
+    color: #8d4872;
+    
+}
