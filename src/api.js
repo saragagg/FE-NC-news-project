@@ -20,3 +20,10 @@ export const getArticleById = (article_id) => {
         return article;
     })
 }
+
+export const getCommentsByArticleId = (article_id) => {
+    return newsApi.get(`/articles/${article_id}/comments`).then(({data: {comments}}) => {
+        return comments;
+    })
+}
+

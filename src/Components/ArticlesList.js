@@ -5,20 +5,25 @@ import ArticleCard from "./ArticleCard";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getArticles().then((articlesData) => {
       setArticles(articlesData);
+      setIsLoading(false);
     });
   }, []);
 
   return (
     <main className="articlesList">
-      {articles.map((article) => {
-        return (
-            <ArticleCard key={article.article_id} article={article} />
-        );
-      })}
+      {isLoading ? (
+        <h2>Loading articles...</h2>
+      ) : (
+        articles.map((article) => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })
+      )}
     </main>
   );
 };

@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
         <h3 className="articleCreationDate">Posted on: {postedDate.toDateString()}</h3>
         <h4 className="articleVotes">Votes: {article.votes}</h4>
         <h4 className="articleComments">{article.comment_count} comments</h4>
-        <Link to={`/articles/${article.article_id}`}> See full article </Link>
+        <Link className="link-to-single-article" to={`/articles/${article.article_id}`}> READ ARTICLE </Link>
       </div>
     </section>
   );
