@@ -1,0 +1,18 @@
+.full-single-article {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: clamp(15px, 5vw, 50px);
+}
+
+
+.single-article-comments {
+    background-color: hsl(319, 33%, 91%);
+    margin: 10px;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 10px;
+}
+
+

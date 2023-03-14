@@ -1,0 +1,26 @@
+.comments-list {
+    margin: 0px;
+}
+
+.comment-card {
+    margin:0;
+    margin-bottom: 6px;
+    background-color: hsl(312, 19%, 95%);
+    padding: 5px;
+}
+
+.comment-card h4 {
+    margin-top: 2px;
+}
+
+.comment-card p {
+    text-align: left;
+}
+
+.comment-card h5 {
+    font-size: clamp(11.8px, 1.5vw, 80px);
+}
+
+.comment-card buttom { 
+    font-size: clamp(11.8px, 1.5vw, 80px);
+}
