@@ -16,9 +16,7 @@ const ArticlesList = () => {
     <main className="articlesList">
       {articles.map((article) => {
         return (
-          <div key={article.article_id}>
-            <ArticleCard article={article} />
-          </div>
+            <ArticleCard key={article.article_id} article={article} />
         );
       })}
     </main>
