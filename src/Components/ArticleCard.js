@@ -1,4 +1,5 @@
 import "./ArticleCard.css";
+import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
 
@@ -14,7 +15,7 @@ const ArticleCard = ({ article }) => {
         <h3 className="articleCreationDate">Posted on: {postedDate.toDateString()}</h3>
         <h4 className="articleVotes">Votes: {article.votes}</h4>
         <h4 className="articleComments">{article.comment_count} comments</h4>
-        <button id="seeArticleButton"> See full article </button>
+        <Link to={`/articles/${article.article_id}`}> See full article </Link>
       </div>
     </section>
   );
