@@ -27,3 +27,19 @@ export const getCommentsByArticleId = (article_id) => {
     })
 }
 
+export const postArticleComment = (article_id) => {
+    return newsApi.post(`/articles/${article_id}/comments`).then(({data: {postedComment}}) => {
+        console.log(postedComment)
+    })
+}
+
+
+
+
+
+
+
+
+
+
+// POST /api/articles/:article_id/comments":

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../api";
 import CommentsList from "./CommentsList";
+import CommentAdder from "./CommentAdder";
 import "./SingleArticle.css"
 
 const SingleArticle = () => {
@@ -29,7 +30,7 @@ const SingleArticle = () => {
           <h3>{article.topic}</h3>
           <img
             src={article.article_img_url}
-            alt={`image of ${article.title} article`}
+            alt={`cover of ${article.title} article`}
           />
           <h3>
             <p> Written by {article.author}</p>
@@ -45,6 +46,7 @@ const SingleArticle = () => {
           {/* placeholder for later tickets */}
           <h4 className="single-article-comments">🗨 {article.comment_count} comments:</h4>
           <CommentsList article_id={article_id}/>
+          <CommentAdder article_id={article_id}/>
         </>
       )}
     </main>
