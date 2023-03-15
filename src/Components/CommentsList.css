@@ -11,6 +11,11 @@
 
 .comment-card h4 {
     margin-top: 2px;
+    font-size: clamp(12.8px, 1.2vw, 80px);
+}
+
+.comment-body {
+    font-size: clamp(12.5px, 1vw, 80px);
 }
 
 .comment-card p {
@@ -18,9 +23,11 @@
 }
 
 .comment-card h5 {
-    font-size: clamp(11.8px, 1.5vw, 80px);
+    font-size: clamp(12.8px, 1.5vw, 80px);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.comment-card buttom { 
-    font-size: clamp(11.8px, 1.5vw, 80px);
+.comment-card button { 
+    font-size: clamp(12.4px, 1vw, 80px);
 }
