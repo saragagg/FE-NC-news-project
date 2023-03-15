@@ -8,9 +8,9 @@ const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { article_id } = useParams();
-  const [vote, setVote] = useState(1);
   const [upVote, setUpVote] = useState(0);
   const [downVote, setDownVote] = useState(0);
+  const [isVotingErr, setIsVotingErr] = useState(false);
 
   const postedDate = new Date(article.created_at);
 
@@ -22,18 +22,28 @@ const SingleArticle = () => {
     });
   }, [article_id]);
 
-  const handleVote = (event) => {
-    if (event.target.value === "downvote") {
-      setVote(-1);
-      setDownVote(1);
-    } else if (event.target.value === "upvote") {
-      setUpVote(1);
-    }
+  const handleUpVote = () => {
+    setIsVotingErr(false);
+    setUpVote(1);
     setArticle((currentArticle) => {
-      return { ...currentArticle, votes: currentArticle.votes + vote };
+      return { ...currentArticle, votes: currentArticle.votes + 1 };
     });
 
-    voteForArticle(article_id, vote);
+    voteForArticle(article_id, +1).catch((err) => {
+      setIsVotingErr(true);
+    });
+  };
+
+  const handleDownVote = () => {
+    setIsVotingErr(false);
+    setDownVote(1);
+    setArticle((currentArticle) => {
+      return { ...currentArticle, votes: currentArticle.votes - 1 };
+    });
+
+    voteForArticle(article_id, -1).catch((err) => {
+      setIsVotingErr(true);
+    });
   };
 
   if (upVote !== 0 && downVote !== 0) {
@@ -65,18 +75,20 @@ const SingleArticle = () => {
           <button
             className="single-article-button"
             value="upvote"
-            onClick={handleVote}
+            onClick={handleUpVote}
             disabled={upVote !== 0}>
             👍 Upvote
           </button>
           <button
             className="single-article-button"
             value="downvote"
-            onClick={handleVote}
+            onClick={handleDownVote}
             disabled={downVote !== 0}>
             👎 Downvote
           </button>
-          {/* placeholder for later tickets */}
+          {isVotingErr && (
+            <p>Ooops, your vote didn't go well. Please try again later!</p>
+          )}
           <h4 className="single-article-comments">
             🗨 {article.comment_count} comments:
           </h4>
