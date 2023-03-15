@@ -70,7 +70,7 @@ const SingleArticle = () => {
           </h3>
 
           <h3>
-            <p>{article.body}</p>
+            <p className="article-body">{article.body}</p>
           </h3>
           <h4>🖤 {article.votes} votes</h4>
           <button

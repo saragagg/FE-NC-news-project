@@ -33,8 +33,9 @@ export const voteForArticle = (article_id, vote) => {
     }) 
 }
 
-export const postArticleComment = (article_id) => {
-    return newsApi.post(`/articles/${article_id}/comments`).then(({data: {postedComment}}) => {
+export const postArticleComment = (article_id, newComment) => {
+    console.log(article_id)
+    return newsApi.post(`/articles/${article_id}/comments`, newComment).then(({data: {postedComment}}) => {
         console.log(postedComment)
     })
 }

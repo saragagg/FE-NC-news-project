@@ -1,7 +1,19 @@
-input {
+textarea {
     width: 80%;
-    height: 20%;
-    text-align: left;
+    height: 100px;
+    text-align: start; 
     padding: 4px;
     padding-top: 2px;
+    border: 2px solid;
+}
+
+
+.comment-adder {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-adder button {
+    align-self: center;
+    width: 15%;
 }
