@@ -15,4 +15,6 @@
     padding: 10px;
 }
 
-
+.single-article-button { 
+    font-size: clamp(12.4px, 1vw, 80px);
+}

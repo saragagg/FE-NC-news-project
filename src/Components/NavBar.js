@@ -5,7 +5,7 @@ const NavBar = () => {
 
   return (
     <div className="navBar-container">
-      <button id="navBar-button"> See articles by topic </button>
+      <button id="navBar-button"> SEE ARTICLES BY TOPICS </button>
     </div>
   );
 };
