@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Gloock&display=swap');
 
-.header {
-margin: 0;
-padding: 0;
-padding-top: 2vw;
-padding-bottom: 2vw;
-}
-
 
 h1 {
     display: inline;
@@ -16,8 +9,6 @@ h1 {
     color: #b580a0;
     margin-right: 0;
     margin-left: 0;
-    /* border-color: aqua;
-    border-style: solid; */
 }
 
 #nc{

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { getCommentsByArticleId } from "../api";
-import "./CommentsList.css"
+import CommentAdder from "./CommentAdder";
+import "./CommentsList.css";
 
 const CommentsList = ({ article_id }) => {
   const [comments, setComments] = useState([]);
@@ -13,12 +14,18 @@ const CommentsList = ({ article_id }) => {
   }, [article_id]);
 
   return (
+    <>
     <section className="comments-list">
-        {comments.map((comment) => {
-        return <CommentCard key={comment.comment_id} comment={comment}/>;
+      {comments.map((comment) => {
+        return (
+            <CommentCard key={comment.comment_id} comment={comment} />
+        );
       })}
-      </section>
-      
+    </section>
+    <section>
+       <CommentAdder setComments={setComments} article_id={article_id} />
+    </section>
+    </>
   );
 };
 

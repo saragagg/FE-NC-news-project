@@ -61,7 +61,7 @@ const SingleArticle = () => {
           <h3>{article.topic}</h3>
           <img
             src={article.article_img_url}
-            alt={`image of ${article.title} article`}
+            alt={`cover of ${article.title} article`}
           />
           <h3>
             <p> Written by {article.author}</p>
@@ -69,7 +69,7 @@ const SingleArticle = () => {
           </h3>
 
           <h3>
-            <p>{article.body}</p>
+            <p className="article-body">{article.body}</p>
           </h3>
           <h4>🖤 {article.votes} votes</h4>
           <button
