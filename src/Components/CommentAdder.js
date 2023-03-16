@@ -6,11 +6,14 @@ import "./CommentAdder.css";
 
 const CommentAdder = ({ article_id, setComments }) => {
   const {user} = useContext(UserContext);
-
   const [newComment, setNewComment] = useState({
     username: user.username,
     body: undefined,
   });
+  const [isPostedErr, setIsPostedErr] = useState(false)
+  const [isPostedSuccess, setIsPostedSuccess] = useState(false)
+
+  const regex = /[A-Z0-9]+/gi
 
   const handleChange = (event) => {
     setNewComment((currentNewComment) => {
@@ -18,21 +21,21 @@ const CommentAdder = ({ article_id, setComments }) => {
     });
   };
 
-  const postSuccess = () => {
-    alert("Comment posted successfully!");
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    newComment.body.match(regex) === null ?
+    setIsPostedErr(true) && setIsPostedSuccess(false) :
     postArticleComment(article_id, newComment)
       .then((newPostedComment) => {
+        setIsPostedErr(false)
+        setIsPostedSuccess(true)
         setComments((currentComments) => {
           return [...currentComments, newPostedComment];
         });
-        postSuccess();
       }).catch((err) => {
-        alert("Sorry, something went wrong! Please try again later");
+        setIsPostedSuccess(false)
+        setIsPostedErr(true)
       })
 
     setNewComment((currentNewComment) => {
@@ -42,6 +45,8 @@ const CommentAdder = ({ article_id, setComments }) => {
 
   return (
     <form className="comment-adder" onSubmit={handleSubmit}>
+      {isPostedErr && <p id="comment-error-message">Sorry, something went wrong! Make sure to add your comment into the box or try again later. </p>}
+      {isPostedSuccess && <p id="comment-success-message">Thanks! Your comment has been posted successfully ❤️</p>}
       <label>
         <textarea
           id="newCommentBody"
