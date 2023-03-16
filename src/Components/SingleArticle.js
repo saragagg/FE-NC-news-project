@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById, voteForArticle } from "../api";
 import CommentsList from "./CommentsList";
-import CommentAdder from "./CommentAdder";
 import "./SingleArticle.css";
 
 const SingleArticle = () => {
@@ -94,7 +93,6 @@ const SingleArticle = () => {
             🗨 {article.comment_count} comments:
           </h4>
           <CommentsList article_id={article_id} />
-          <CommentAdder article_id={article_id} />
         </>
       )}
     </main>

@@ -1,10 +1,11 @@
 textarea {
-    width: 80%;
+    width: 90%;
     height: 100px;
     text-align: start; 
     padding: 4px;
     padding-top: 2px;
     border: 2px solid;
+    font-size: clamp(12.8px, 1.2vw, 80px);
 }
 
 
@@ -13,7 +14,3 @@ textarea {
     flex-direction: column;
 }
 
-.comment-adder button {
-    align-self: center;
-    width: 15%;
-}
