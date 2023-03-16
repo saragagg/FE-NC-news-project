@@ -23,12 +23,13 @@ const CommentAdder = ({ article_id, setComments }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsPostedSuccess(false)
+    setIsPostedErr(false)
 
     newComment.body.match(regex) === null ?
-    setIsPostedErr(true) && setIsPostedSuccess(false) :
+    setIsPostedErr(true):
     postArticleComment(article_id, newComment)
       .then((newPostedComment) => {
-        setIsPostedErr(false)
         setIsPostedSuccess(true)
         setComments((currentComments) => {
           return [...currentComments, newPostedComment];
