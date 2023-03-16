@@ -49,7 +49,7 @@ const CommentAdder = ({ article_id, setComments }) => {
           placeholder="Add a comment..."
           onChange={handleChange}></textarea>
       </label>
-      <button id="post-comment-button">Post comment!</button>
+      <button id="post-comment-button" disabled={newComment.body===""}>Post comment!</button>
     </form>
   );
 };
