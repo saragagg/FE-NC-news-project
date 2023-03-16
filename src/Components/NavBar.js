@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { getTopics } from "../api";
+
 import "./NavBar.css";
 
 const NavBar = () => {

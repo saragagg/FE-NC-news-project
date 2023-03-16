@@ -6,6 +6,13 @@
 
 .navBar-button {
     margin-left: 10px;
+#navBar-button {
+    padding:5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 2px solid;
+    border-radius: 15px;
+    background-color: #f2e8ef;
     border-color: #A1708D;
     font-size: clamp(15px, 2vw, 50px);
     color: #8d4872;

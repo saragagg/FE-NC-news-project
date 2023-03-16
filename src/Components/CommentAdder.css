@@ -1,0 +1,30 @@
+textarea {
+    width: 90%;
+    height: 100px;
+    text-align: start; 
+    padding: 4px;
+    padding-top: 2px;
+    border: 2px solid;
+    font-size: clamp(12.8px, 1.2vw, 80px);
+}
+
+
+.comment-adder {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-error-message {
+    color: rgb(215, 41, 41);
+}
+
+#comment-success-message {
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    border: 4px solid;
+    /* border-color: rgb(208, 190, 202); */
+    border-radius: 10px;
+    /* box-shadow: -3px -2px 20px rgb(212, 117, 177); */
+    
+}
