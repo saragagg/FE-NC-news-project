@@ -20,7 +20,6 @@ const TopicBar = () => {
             to={`/articles?topic=${topic.slug}`}
             className="topicBar-link"
             key={topic.slug}>
-           
             {topic.slug} news
           </Link>
         );
