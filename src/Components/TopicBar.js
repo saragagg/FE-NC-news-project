@@ -1,28 +1,30 @@
-import { getTopics } from "../api";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./TopicBar.css";
+import { getTopics } from "../api";
+import { Link } from "react-router-dom";
 
-const TopicBar = ({setSelectedTopic}) => {
-
+const TopicBar = () => {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
     getTopics().then((topicsData) => {
       setTopics(topicsData);
-    })
-  }, [])
-
-  // const handleClick = (event) => {
-  //   setSelectedTopic(event.target.value);
-  // }
+    });
+  }, []);
 
   return (
-    <div className="topic-container">
+    <div className="topics-container">
       {topics.map((topic) => {
-        return <Link to={`/articles?topic=${topic.slug}`} className="navBar-link" key={topic.slug}> {topic.slug} news </Link>
+        return (
+          <Link
+            to={`/articles?topic=${topic.slug}`}
+            className="topicBar-link"
+            key={topic.slug}>
+            {" "}
+            {topic.slug} news{" "}
+          </Link>
+        );
       })}
-      
     </div>
   );
 };
