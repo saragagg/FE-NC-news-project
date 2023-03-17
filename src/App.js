@@ -2,18 +2,20 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
-import NavBar from "./Components/NavBar";
+import TopicBar from "./Components/TopicBar";
 import SingleArticle from "./Components/SingleArticle";
 import ArticlesList from "./Components/ArticlesList";
+import { useState } from "react";
 
 function App() {
 
   return (
     <div>
       <Header />
-      <NavBar />
+      <TopicBar />
       <Routes>
-        <Route path="/" element = {<ArticlesList />}/>
+      <Route path="/" element = {<ArticlesList />}/>
+        <Route path="/articles" element = {<ArticlesList />}/>
         <Route path="/articles/:article_id" element = {<SingleArticle />}/>
       </Routes>
     </div>

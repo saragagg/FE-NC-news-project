@@ -11,8 +11,10 @@ export const getTopics = () => {
   });
 };
 
-export const getArticles = () => {
-  return newsApi.get("/articles").then(({ data: { articles } }) => {
+export const getArticles = (topic) => {
+  return newsApi.get("/articles", {params: {
+    topic: topic
+  }}).then(({ data: { articles } }) => {
     return articles;
   });
 };

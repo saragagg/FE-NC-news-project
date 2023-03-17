@@ -1,0 +1,11 @@
+.topics-container {
+  background-color: #f4ecf2;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+
+.topicBar-link {
+  margin: 15px;
+  font-size: clamp(15px, 2vw, 50px);
+  color: #8a426e;
+}
