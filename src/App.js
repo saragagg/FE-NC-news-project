@@ -16,6 +16,7 @@ function App() {
       <Header />
       <TopicBar setSearchParams={setSearchParams} />
       <Routes>
+        <Route path="/" element = {<ArticlesList />}/>
         <Route path="/articles" element = {<ArticlesList topicQuery={topicQuery}/>}/>
         <Route path="/articles/:article_id" element = {<SingleArticle />}/>
       </Routes>
