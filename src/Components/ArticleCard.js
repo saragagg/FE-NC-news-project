@@ -7,7 +7,7 @@ const ArticleCard = ({ article }) => {
     
   return (
     <section className="articleCard" key={article.article_id}>
-      <img src={article.article_img_url} />
+      <img src={article.article_img_url} alt={article.title}/>
       <div className="articleCard-text">
         <h2 className="articleTitle">{article.title}</h2>
         <h3 className="articleTopic">Topic: {article.topic}</h3>
