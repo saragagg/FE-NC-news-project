@@ -9,7 +9,8 @@ const NavBar = () => {
       setTopics(topicsData);
     });
   }, []);
-
+ 
+  
   return (
     <div className="navBar-container">
       {topics.map((topic) => {
