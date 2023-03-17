@@ -13,7 +13,7 @@ button {
   background-color: black;
   color: white;
   border: 0;
-  margin: 1px;
+  margin: 2px;
   font-size: clamp(11.8px, 1.5vw, 80px);
 }
 
