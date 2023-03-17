@@ -11,14 +11,18 @@ const SingleArticle = () => {
   const [upVote, setUpVote] = useState(0);
   const [downVote, setDownVote] = useState(0);
   const [isVotingErr, setIsVotingErr] = useState(false);
-
+  const [articleNotFound, setArticleNotFound] = useState(false)
   const postedDate = new Date(article.created_at);
 
   useEffect(() => {
+    setArticleNotFound(false)
     setIsLoading(true);
     getArticleById(article_id).then((articleData) => {
       setArticle(articleData);
       setIsLoading(false);
+    }).catch((err) => {
+      setArticleNotFound(true)
+      setIsLoading(false)
     });
   }, [article_id]);
 
@@ -52,7 +56,8 @@ const SingleArticle = () => {
   }
 
   return (
-    <main className="full-single-article">
+    <>
+    {articleNotFound ? <p>Article not found</p> : <main className="full-single-article">
       {isLoading ? (
         <h2> Loading article... </h2>
       ) : (
@@ -95,7 +100,9 @@ const SingleArticle = () => {
           <CommentsList article_id={article_id} />
         </>
       )}
-    </main>
+    </main>}
+    
+    </>
   );
 };
 

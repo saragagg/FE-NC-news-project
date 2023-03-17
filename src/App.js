@@ -15,6 +15,7 @@ function App() {
       <Route path="/" element = {<ArticlesList />}/>
         <Route path="/articles" element = {<ArticlesList />}/>
         <Route path="/articles/:article_id" element = {<SingleArticle />}/>
+        <Route path="/*" element = {<p>Page not found</p>}/>
       </Routes>
     </div>
   );

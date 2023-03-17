@@ -10,6 +10,7 @@ const CommentCard = ({ comment }) => {
   const [isDeletedSuccess, setIsDeletedSuccess] = useState(false)
   const [isClicked, setIsClicked] = useState(false)
 
+  
   const handleDelete = (event) => {
     setIsClicked(true)
     event.preventDefault()
