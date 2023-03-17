@@ -8,8 +8,10 @@ const CommentCard = ({ comment }) => {
   const { user } = useContext(UserContext);
   const [isDeletedErr, setIsDeletedErr] = useState(false)
   const [isDeletedSuccess, setIsDeletedSuccess] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
 
   const handleDelete = (event) => {
+    setIsClicked(true)
     event.preventDefault()
 
     deleteComment(event.target.value)
@@ -18,6 +20,7 @@ const CommentCard = ({ comment }) => {
         setIsDeletedErr(false);
       })
       .catch((err) => {
+        setIsClicked(false)
         setIsDeletedSuccess(false)
         setIsDeletedErr(true)
       });
@@ -36,7 +39,7 @@ const CommentCard = ({ comment }) => {
       {isDeletedErr && <p>Sorry, something went wront. Please try again later</p>}
       {isDeletedSuccess && <p>Comment deleted successfully!</p> }
       {comment.author === user.username ? (
-        <button value={comment.comment_id} onClick={handleDelete}>
+        <button disabled={isClicked} value={comment.comment_id} onClick={handleDelete}>
           Delete comment
         </button>
       ) : (
