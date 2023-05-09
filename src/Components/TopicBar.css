@@ -6,6 +6,6 @@
 
 .topicBar-link {
   margin: 15px;
-  font-size: clamp(15px, 2vw, 50px);
+  font-size: clamp(14px, 2.5vw, 30px);
   color: #8a426e;
 }
