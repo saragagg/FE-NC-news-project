@@ -9,7 +9,6 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 80%;
-    
     display: flex;
     flex-direction: row;
     font-size: clamp(14.5px, 1.2vw, 80px);

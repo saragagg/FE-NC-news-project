@@ -48,9 +48,9 @@ const CommentAdder = ({ article_id, setComments }) => {
     <form className="comment-adder" onSubmit={handleSubmit}>
       {isPostedErr && <p id="comment-error-message">Sorry, something went wrong! Make sure to add your comment into the box or try again later. </p>}
       {isPostedSuccess && <p id="comment-success-message">Thanks! Your comment has been posted successfully ❤️</p>}
-      <label>
+      <label id="newCommentBody">
         <textarea
-          id="newCommentBody"
+          
           value={newComment.body}
           placeholder="Add a comment..."
           onChange={handleChange}></textarea>

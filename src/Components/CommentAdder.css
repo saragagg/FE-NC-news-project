@@ -1,9 +1,11 @@
+#newCommentBody {
+    width: 90% ;
+}
 textarea {
-    width: 80vw;
+    width: 100%;
     height: 30vh;
     text-align: start; 
-    padding: 4px;
-    padding-top: 2px;
+    padding: 10px;
     border: 2px solid;
     font-size: clamp(12.8px, 1.2vw, 80px);
 }
@@ -12,6 +14,7 @@ textarea {
 .comment-adder {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #comment-error-message {
