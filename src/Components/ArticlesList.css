@@ -4,11 +4,30 @@
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-label {
-    margin-right: 20px
+#filterContainer {
+    margin: 1vw;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(14.5px, 1.2vw, 80px);
 }
 
 select {
     margin-left: 5px;
     padding: 3px;
+    font-size: clamp(14.5px, 1.2vw, 80px);
 }
+
+@media(max-width: 500px) {
+    #filterContainer {
+        flex-direction: column;
+    }
+    #sort-by-filter {
+        margin-bottom: 5px;
+    }
+}
+
+

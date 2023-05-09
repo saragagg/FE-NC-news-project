@@ -44,13 +44,13 @@ h2 {
 
 h3 {
     margin: 2px;
-    font-size: clamp(13px, 1vw, 30px);
+    font-size: clamp(14.5px, 1vw, 30px);
     text-align: left;
     margin-bottom: 0;
 }
 
 h4 {
-    font-size: clamp(11.8px, 1.5vw, 80px);
+    font-size: clamp(12.8px, 1.5vw, 80px);
     text-align: left;
 }
 

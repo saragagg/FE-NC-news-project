@@ -35,8 +35,8 @@ const ArticlesList = () => {
 
   return (
     <div className="articlesList">
-      <label>
-        {" "}
+      <div id="filterContainer">
+        <label id="sort-by-filter">
         Sort by:
         <select onChange={(e) => setSortBy(e.target.value)}>
           <option disabled value="">
@@ -48,7 +48,6 @@ const ArticlesList = () => {
         </select>
       </label>
       <label>
-        {" "}
         Order:
         <select onChange={(e) => setOrder(e.target.value)}>
           <option disabled value="">
@@ -58,6 +57,7 @@ const ArticlesList = () => {
           <option value="asc">Ascending order</option>
         </select>
       </label>
+      </div>
       <main>
         {isLoading ? (
           <h2>Loading articles...</h2>
